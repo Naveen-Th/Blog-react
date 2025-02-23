@@ -5,17 +5,17 @@ import { motion } from 'framer-motion';
 
 const trendingPosts = [
   {
-    id: 100,
+    id: 6,
     title: 'Quick Green Pasta Salad',
     image: 'https://gutentype.ancorathemes.com/wp-content/uploads/2021/01/food-section-4-5-copyright.jpg'
   },
   {
-    id: 101,
+    id: 7,
     title: 'Easy Slow Cooker Dinners',
     image: 'https://gutentype.ancorathemes.com/wp-content/uploads/2021/01/food-section-2-2-copyright-570x452.jpg'
   },
   {
-    id: 102,
+    id: 8,
     title: 'Burgers Around the World',
     image: 'https://gutentype.ancorathemes.com/wp-content/uploads/2021/01/food-section-2-3-copyright-570x452.jpg'
   }
@@ -23,7 +23,6 @@ const trendingPosts = [
 
 const Home = () => {
   const { posts, deletePost, sortByTitle, sortByType,sortNotSelect,sortByTime } = useBlog();
-
 
   const [sortOption, setSortOption] = useState('');
 
@@ -55,6 +54,7 @@ const Home = () => {
 
   return (
     <motion.div
+      key = {posts.id}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}

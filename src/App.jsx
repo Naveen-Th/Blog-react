@@ -18,11 +18,11 @@ function App() {
   return (
     <BlogProvider>
       <Router>
-      <AnimatePresence>
         <ScrollToTop />
         <NavBar >
-        < Search />
+          < Search />
         </NavBar>
+        <AnimatePresence>
         <Routes>
           <Route index element={<Home/>} />
           <Route path="/post/:id/:title" element={<Post />} />
