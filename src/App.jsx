@@ -8,6 +8,7 @@ import EditPost from './pages/EditPost';
 import NavBar from './components/NavBar';
 import Search from './components/Search';
 import ScrollToTop from './components/ScrollTop';
+import { AnimatePresence } from 'framer-motion';
 
 import { BlogProvider } from './BlogContext';
 
@@ -17,6 +18,7 @@ function App() {
   return (
     <BlogProvider>
       <Router>
+      <AnimatePresence>
         <ScrollToTop />
         <NavBar >
         < Search />
@@ -29,6 +31,7 @@ function App() {
           <Route path="/add" element={<AddPost  />} />
           <Route path="/edit/:id" element={<EditPost />} />
         </Routes>
+        </AnimatePresence>
       </Router>
     </BlogProvider>
   );

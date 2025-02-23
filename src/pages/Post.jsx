@@ -1,6 +1,7 @@
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import React, { useContext } from 'react';
 import { useBlog } from '../BlogContext';
+import { motion } from 'framer-motion';
 
 const Post = () => {
   const { posts } = useBlog();
@@ -17,6 +18,12 @@ const Post = () => {
     .slice(0, 3); 
 
   return (
+    <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.5 }}
+        >
     <div className="container mx-auto p-4 md:w-3/5">
       <button
         className="bg-blue-300 p-3 mt-2 mb-5 rounded-xl shadow-lg outline-0 outline-black shadow-blue-300"
@@ -62,6 +69,7 @@ const Post = () => {
         </div>
       </div>
     </div>
+    </motion.div>
   );
 };
 

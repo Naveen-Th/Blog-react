@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import React, { useState } from 'react';
 import { useBlog } from '../BlogContext';
+import { motion } from 'framer-motion';
 
 const trendingPosts = [
   {
@@ -53,6 +54,12 @@ const Home = () => {
   }
 
   return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.5 }}
+    >
     <div className="container mx-auto p-4 md:w-[74em] mb-4">
 
       <div className="flex flex-col md:flex-row items-center justify-between md:bg-white px-0 py-2 md:px-10 md:py-5 mt-2 md:mt-10">
@@ -130,6 +137,7 @@ const Home = () => {
         ))}
       </div>
     </div>
+    </motion.div>
   );
 };
 
