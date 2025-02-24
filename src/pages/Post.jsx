@@ -10,7 +10,7 @@ const Post = () => {
   const post = posts.find((post) => `${post.id}/${post.title}` === `${id}/${title}`);
 
   if (!post) {
-    return <div>Post not found</div>;
+    return <div className='flex items-center justify-center h-48 text-red-500 text-2xl'>Post not found :)</div>;
   }
 
   const relatedPosts = posts
